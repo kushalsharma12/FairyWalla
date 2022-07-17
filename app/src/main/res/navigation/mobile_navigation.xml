@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map_navigation"
+    app:startDestination="@+id/navigation_map">
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.kushalsharma.fairywallaapp.ui.map.MapFragment"
+        android:label="Map"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/navigation_explore"
+        android:name="com.kushalsharma.fairywallaapp.ui.explore.ExploreFragment"
+        android:label="@string/title_explore"
+        tools:layout="@layout/fragment_explore" >
+        <action
+            android:id="@+id/action_navigation_explore_to_fairyWallaProductList"
+            app:destination="@id/fairyWallaProductList" />
+        <action
+            android:id="@+id/action_navigation_explore_to_rateFragment"
+            app:destination="@id/rateFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.kushalsharma.fairywallaapp.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/fairyWallaProductList"
+        android:name="com.kushalsharma.fairywallaapp.ui.FairyWallaProductList.FairyWallaProductList"
+        android:label="fragment_fairy_walla_product_list"
+        tools:layout="@layout/fragment_fairy_walla_product_list" >
+
+        <argument
+            android:name="FairyWallaUid"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_fairyWallaProductList_to_navigation_explore"
+            app:destination="@id/navigation_explore" />
+        <action
+            android:id="@+id/action_fairyWallaProductList_to_rateFragment"
+            app:destination="@id/rateFragment" />
+        <action
+            android:id="@+id/action_fairyWallaProductList_to_navigation_map"
+            app:destination="@id/navigation_map" />
+    </fragment>
+    <fragment
+        android:id="@+id/rateFragment"
+        android:name="com.kushalsharma.fairywallaapp.RateFragment"
+        android:label="fragment_rate"
+        tools:layout="@layout/fragment_rate" >
+        <action
+            android:id="@+id/action_rateFragment_to_navigation_explore"
+            app:destination="@id/navigation_explore" />
+    </fragment>
+</navigation>

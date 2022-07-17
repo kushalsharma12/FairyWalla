@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.FairyWallaProductList.FairyWallaProductList">
+
+        <com.google.android.material.card.MaterialCardView
+        android:id="@+id/back_btn_fpl"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:elevation="0dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/background_color"
+        app:cardBackgroundColor="@color/background_color"
+        app:cardCornerRadius="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_back_btn" />
+
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+        <TextView
+        android:id="@+id/fpl_top_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="0dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingLeft="40dp"
+        android:paddingRight="20dp"
+        android:text="FairyWalla's Product List"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/back_btn_fpl"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginRight="64dp" />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_productList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_product_list"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fpl_top_text"
+         >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:backgroundTint="@color/green_color"
+        android:text="Come to My Location"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:id="@+id/cTloc_Btn"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:cornerRadius="24dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
